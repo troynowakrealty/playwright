@@ -1,4 +1,4 @@
 {
-  "take screenshot": "scripts/commands.sh",
-  "run demo test": "scripts/commands.sh"
+  "take screenshot": "scripts/capture_screenshot.sh",
+  "check page title": "scripts/check_title.sh"
 }
