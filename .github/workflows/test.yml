@@ -7,8 +7,24 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup env and run commands
+      - name: Setup Playwright
         run: |
-          chmod +x scripts/bootstrap_env.sh scripts/commands.sh
+          chmod +x scripts/*.sh
           ./scripts/bootstrap_env.sh
-          ./scripts/commands.sh
+      - name: Capture screenshot
+        run: |
+          ./scripts/capture_screenshot.sh https://example.com example.png
+          test -f example.png
+      - name: Check title
+        run: |
+          ./scripts/check_title.sh https://example.com | grep -q "Title:"
+      - name: Screenshot and OCR
+        run: |
+          ./scripts/screenshot_and_extract_text.sh '{"url":"https://example.com"}'
+      - name: Run with retry
+        run: |
+          ./scripts/run_with_retry.sh '{"tool":"./scripts/capture_screenshot.sh","args":"https://example.com retry.png"}'
+      - name: Run Playwright script
+        run: |
+          echo "import { test, expect } from '@playwright/test'; test('example', async ({ page }) => { await page.goto('https://example.com'); await expect(page).toHaveTitle(/Example Domain/); });" > example.spec.ts
+          ./scripts/run_playwright_script.sh '{"script":"example.spec.ts"}'

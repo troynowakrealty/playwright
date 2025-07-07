@@ -1,4 +1,24 @@
 {
-  "take screenshot": "scripts/commands.sh",
-  "run demo test": "scripts/commands.sh"
+  "capture_screenshot": {
+    "path": "scripts/capture_screenshot.sh",
+    "env": "/bin/bash"
+  },
+  "check_title": {
+    "path": "scripts/check_title.sh",
+    "env": "/bin/bash"
+  },
+  "run_with_retry": {
+    "path": "scripts/run_with_retry.sh",
+    "env": "/bin/bash"
+  },
+  "screenshot_and_extract_text": {
+    "path": "scripts/screenshot_and_extract_text.sh",
+    "env": "/bin/bash"
+  },
+  "run_playwright_script": {
+    "path": "scripts/run_playwright_script.sh",
+    "env": "/bin/bash"
+  },
+  "take screenshot": "scripts/capture_screenshot.sh",
+  "check page title": "scripts/check_title.sh"
 }
