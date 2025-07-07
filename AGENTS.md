@@ -1,12 +1,13 @@
-# Local Agent Instructions
+# Agent Setup – Playwright CLI Tool
 
-## Setup
-1. Run \`scripts/bootstrap_env.sh\` to install Node & Playwright CLI.
+## To Initialize:
+Run \`scripts/bootstrap_env.sh\` to install Node + Playwright CLI + browser engines.
 
-## Usage
-- To take a screenshot: run \`scripts/commands.sh\`
-- Output files:
-  - \`example.png\`
-  - test results printed to console
+## Supported Commands:
+- \`take screenshot\`: Run \`scripts/capture_screenshot.sh <url> <output.png>\`
+- \`check page title\`: Run \`scripts/check_title.sh <url>\`
 
-Ensure exit code 0 means success. Agent should verify existence of output files or log messages.
+## Output Expectations:
+Scripts log results to stdout. Exit 0 = success. Agent should verify:
+- \`example.png\` exists
+- "Title:" string is printed to stdout

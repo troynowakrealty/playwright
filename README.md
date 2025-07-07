@@ -1,18 +1,20 @@
-# Playwright CLI Tool Repo
+# Playwright – Local Agent Tool
 
-## Purpose
-Headless browser automation via CLI for screenshots & simple tests.
+Headless browser scripting using Playwright via CLI.
 
-## Setup (macOS M1)
+## Setup:
 \`\`\`bash
-scripts/bootstrap_env.sh
+bash scripts/bootstrap_env.sh
 \`\`\`
 
-## Usage
-- \`scripts/commands.sh\` runs example flow: screenshot + test.
+## Usage:
+\`\`\`bash
+bash scripts/capture_screenshot.sh https://example.com out.png
+bash scripts/check_title.sh https://example.com
+\`\`\`
 
-## Repository Structure
-- scripts/: CLI setup & usage
-- tool_map.json: maps plain–language commands
-- AGENTS.md: instructions for agent automation
-- .github/: CI workflows
+## Repository Structure:
+- \`scripts/\`: CLI actions
+- \`tool_map.json\`: maps commands to scripts
+- \`AGENTS.md\`: agent instructions
+- \`.github/\`: test workflows
