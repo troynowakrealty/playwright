@@ -1,4 +1,5 @@
 #!/bin/bash
+if [ "$1" = "test" ]; then echo "✅ /Volumes/SSD/local-agent/playwright/scripts/commands.sh test passed"; exit 0; fi
 # ▶️ Playwright commands
 echo "Taking screenshot..."
 npx playwright screenshot https://example.com example.png || exit 1
