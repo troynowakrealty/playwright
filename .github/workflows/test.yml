@@ -1,0 +1,14 @@
+name: CI — Playwright
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup env and run commands
+        run: |
+          chmod +x scripts/bootstrap_env.sh scripts/commands.sh
+          ./scripts/bootstrap_env.sh
+          ./scripts/commands.sh

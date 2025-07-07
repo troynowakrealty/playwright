@@ -1,0 +1,4 @@
+{
+  "take screenshot": "scripts/commands.sh",
+  "run demo test": "scripts/commands.sh"
+}
